@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@500&family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
+:root {
+    --main: #ff4b4b;
+}
+
+*, *::after, *::before {
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif !important;
+    scroll-snap-type: y mandatory;
+}
+
+* section:not(:nth-child(2)) {
+    scroll-snap-align: start;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+@font-face {
+    font-family: Nike;
+    src: url("../fonts/nike.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Fantomen;
+    src: url("../fonts/Fantomen.otf");
+}
+
+@media (max-width: 800px) {
+    *, *::after, *::before {
+        scroll-snap-type: none;
+    }
+}
+
+/* Navigation Bar */
+
+.upperNav {
+    background-color: white;
+    padding: 0 60px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.upperNav a {
+    margin-left: 10px;
+    background: transparent;
+    text-transform: lowercase;
+    color: #111 !important;
+}
+
+.upperNav a:hover {
+    opacity: 0.8;
+}
+
+nav {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+#logoNav, #menuNav {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+}
+
+#menuNav {
+    display: none;
+}
+
+nav div {
+    background: transparent;
+}
+
+nav a {
+    color: #111 !important;
+    font-size: 16px;
+    background: transparent;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', serif !important;
+}
+
+.secondNav a:hover {
+    border-bottom: 3px solid var(--main) !important;
+}
+
+.secondNav {
+    text-align: center;
+}
+
+.secondNav a {
+    margin: 0 20px;
+    font-weight: 600;
+}
+
+.thirdNav {
+    text-align: right;
+}
+
+#cart {
+    width: 30px;
+    background: transparent;
+}
+
+#cart:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.menuList {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.listItemsMenu {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.listItemsMenu a {
+    font-size: 20px;
+    background: transparent;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', serif !important;
+    font-weight: 600;
+    color: #111 !important;
+}
+
+.listItemsMenu a:hover {
+    border-bottom: 3px solid var(--main);
+}
+
+.hidden {
+    display: none;
+}
+
+.listItemsMenu, ul, li, a{
+    text-transform: uppercase;
+    background: transparent;
+}
+
+.menuList ul {
+    list-style-type: none;
+}
+
+@media (max-width: 800px) {
+    .secondNav, .upperNav {
+        display: none;
+    }
+    #logoNav {
+        display: none;
+    }
+    #menuNav {
+        display: block;
+    }
+}
+
+/* First Div */
+
+#firstDiv {
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tryJordan {
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.tryJordan img {
+    max-width: 60vw;
+}
+
+.exploreJordan {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.colorit {
+    color: var(--main) !important;
+    font-size: 5vw;
+    font-family: Nike, sans-serif !important;
+}
+
+.exploreJordan h1 {
+    font-size: 7vw;
+    text-align: center;
+    font-family: Nike, sans-serif !important;
+    text-transform: uppercase;
+}
+
+.shopNow {
+    text-align: right;
+    margin: 50px;
+    padding: 0.8em 1.8em;
+    border: 2px solid var(--main) !important;
+    position: relative;
+    left: 20%;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--main);
+}
+
+.shopNow::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--main);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.shopNow:hover::before {
+    width: 105%;
+}
+
+.shopNow:hover {
+    color: #111;
+}
+
+@media (max-width: 800px) {
+    #firstDiv {
+        flex-direction: column;
+    }
+    
+    .tryJordan {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .tryJordan img {
+        margin: 20px;
+        max-width: 90vw;
+    }
+    
+    .exploreJordan {
+        margin-top: 30px;
+    }
+    
+    .exploreJordan h1 {
+        font-size: 12vw;
+        text-align: center;
+    }
+    
+    .shopNow {
+        margin: 20px 5px;
+        padding: 0.4em 0.9em;
+        position: relative;
+        left: 0;
+        font-size: 13px;
+    }
+}
+
+/* Yeezys */
+
+#yeezys {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.yeezysAd img {
+    margin: 60px 20px;
+    max-width: 95vw;
+    height: auto;
+}
+
+
+.cta {
+    border: none;
+    background: none;
+    margin: 20px;
+    position: relative;
+    top: -300px;
+    right: 300px;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    color: #fff;
+    font-family: Fantomen !important;
+    letter-spacing: 1.5px;
+    font-size: 32px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media (max-width: 800px) {
+    .yeezysAd img {
+        margin: 20px;
+        max-width: 95vw;
+        height: auto;
+    }
+
+    .cta {
+        margin: 10px;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    
+    .cta span {
+        color: var(--main);
+        font-family: Fantomen !important;
+        font-size: 24px;
+    }
+
+    .hover-underline-animation {
+        color: var(--main);
+    }
+    
+    .hover-underline-animation:after {
+        background-color: var(--main);
+    }
+}
+
+/* Features */
+
+#features {
+    border-top: 2px solid var(--main);
+    background-color: #fff;
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#features h1 {
+    text-transform: uppercase;
+    color: #111;
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-weight: bold;
+    font-size: 5vw;
+}
+
+#features p {
+    color: #111;
+    font-size: 13px;
+}
+
+.checkNow {
+    text-align: center !important;
+    left: 0 !important;
+    margin: 10px;
+    border: 2px solid var(--main) !important;
+}
+
+/* Footer */
+
+#footer {
+    background-color: var(--main) !important;
+    color: #fff !important
+}
+
+#contact{
+    height: 15rem;
+    display: flex;
+    padding: 80px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#trademark{
+    margin: 20px;
+}
+
+#trademark h6 {
+    color: #fff !important;
+}
+
+.icons{
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 1500px){
+    #trademark, #socials {
+        margin: 0 40px;
+        text-align: center;
+    }
+    #contact{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0 60px;
+    }
+    .icons{
+        margin: 0px 15px;
+    }
+}
